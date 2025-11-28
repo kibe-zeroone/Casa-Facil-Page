@@ -6,7 +6,7 @@ interface NavigationProps {
   onLoginClick: () => void;
 }
 
-export default function Navigation({ onLoginClick }: NavigationProps) {
+export function Navigation({ onLoginClick }: NavigationProps) {
   // Classe base unificada para todos os textos
   const menuItemClass =
     "text-[15px] font-medium text-gray-700 hover:text-[#1e3a5f] transition-colors flex items-center gap-2";
