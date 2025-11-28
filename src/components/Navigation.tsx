@@ -9,7 +9,7 @@ export function Navigation({ onLoginClick }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-50 border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-blue-50/100 border-b border-gray-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
