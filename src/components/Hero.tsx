@@ -7,7 +7,7 @@ interface HeroProps {
 
 export function Hero({ onSearch }: HeroProps) {
   return (
-    <section id="inicio" className="relative bg-white overflow-hidden">
+    <section id="inicio" className="relative bg-white overflow-hidden pt-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center max-w-4xl mx-auto space-y-6">
           {/* Map Image */}
