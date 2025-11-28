@@ -19,7 +19,7 @@ export function Navigation({ onLoginClick }: NavigationProps) {
               <img
                 src="/logo.png"
                 alt="CasaFácil Logo"
-                className="h-18 w-auto"
+                className="h-14 w-auto"
               />
             </div>
           </div>
