@@ -37,7 +37,7 @@ export function Navigation({ onLoginClick }: NavigationProps) {
             </a>
 
             <button className="flex items-center gap-2 text-gray-700 hover:text-[#1e3a5f] transition-colors">
-              <Heart size={20} />
+              <HeartIcon size={20} />
               Favoritos
             </button>
 
@@ -75,7 +75,7 @@ export function Navigation({ onLoginClick }: NavigationProps) {
             </a>
 
             <button className="flex items-center gap-2 text-gray-700 hover:text-[#1e3a5f] py-2">
-              <Heart size={20} />
+              <HeartIcon size={20} />
               Favoritos
             </button>
 
