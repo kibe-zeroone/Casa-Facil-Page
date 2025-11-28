@@ -14,7 +14,7 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
+    
     // Simulate login process
     setTimeout(() => {
       console.log('Login attempted with:', { email, password });

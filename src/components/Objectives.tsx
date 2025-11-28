@@ -50,7 +50,7 @@ export function Objectives() {
 
             <div className="relative">
               {/* Placeholder para imagem - substitua com sua imagem */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl aspect-square flex items-center justify-center border border-gray-200">
+              <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl aspect-square flex items-center justify-center border border-gray-200">
                 <div className="text-gray-600 text-center p-8">
                   <p>Imagem dos Objetivos</p>
                   <p className="text-sm mt-2">(Substitua com sua imagem)</p>

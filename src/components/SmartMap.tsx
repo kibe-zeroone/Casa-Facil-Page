@@ -7,7 +7,7 @@ export function SmartMap() {
             <h2 className="text-gray-900">
               MAPA INTELIGENTE
             </h2>
-
+            
             <p className="text-gray-600">
               O site oferece um mapa interativo que exibe, em tempo real, as casas disponíveis diretamente na região desejada.
             </p>
@@ -33,7 +33,7 @@ export function SmartMap() {
                   <div className="bg-white rounded-[2.5rem] overflow-hidden">
                     {/* Phone notch */}
                     <div className="bg-gray-900 h-8 rounded-b-3xl mx-auto w-40"></div>
-
+                    
                     {/* Map content - você pode substituir por uma imagem real */}
                     <div className="relative aspect-[9/16] bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
                       <div className="text-gray-600 text-center p-8">

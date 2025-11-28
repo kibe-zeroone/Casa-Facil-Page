@@ -1,8 +1,11 @@
 import { Search } from 'lucide-react';
-import ImageWithFallback from "./figma/ImageWithFallback";
-import mapImage from '../assets/mapaCentral.jpg';
+import {ImageWithFallback} from './figma/ImageWithFallback';
 
-export function Hero() {
+interface HeroProps {
+  onSearch: () => void;
+}
+
+export function Hero({ onSearch }: HeroProps) {
   return (
     <section id="inicio" className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -10,8 +13,8 @@ export function Hero() {
           {/* Map Image */}
           <div className="flex justify-center items-center mb-6">
             <div className="w-full max-w-2xl rounded-lg overflow-hidden shadow-lg">
-              <ImageWithFallback
-                src={mapImage}
+              <ImageWithFallback 
+                src="/mapaCentral.jpg"
                 alt="Mapa de localização"
                 className="w-full h-auto"
               />
@@ -28,23 +31,38 @@ export function Hero() {
                   className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent bg-white"
                 />
               </div>
-              <button className="bg-[#1e3a5f] text-white px-8 py-3 rounded hover:bg-[#152940] transition-colors flex items-center justify-center gap-2">
+              <button 
+                onClick={onSearch}
+                className="bg-[#1e3a5f] text-white px-8 py-3 rounded hover:bg-[#152940] transition-colors flex items-center justify-center gap-2"
+              >
                 <Search size={20} />
                 Buscar
               </button>
             </div>
-
+            
             <div className="flex flex-wrap gap-2 mt-4">
-              <button className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors">
+              <button 
+                onClick={onSearch}
+                className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors"
+              >
                 Apartamento
               </button>
-              <button className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors">
+              <button 
+                onClick={onSearch}
+                className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors"
+              >
                 Casa
               </button>
-              <button className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors">
+              <button 
+                onClick={onSearch}
+                className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors"
+              >
                 Comprar
               </button>
-              <button className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors">
+              <button 
+                onClick={onSearch}
+                className="px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:border-[#1e3a5f] hover:text-[#1e3a5f] transition-colors"
+              >
                 Alugar
               </button>
             </div>

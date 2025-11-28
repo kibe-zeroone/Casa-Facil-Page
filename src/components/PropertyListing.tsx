@@ -1,6 +1,10 @@
 import { SlidersHorizontal, MapPin, Home, Building, Bed, Bath, Car, Heart } from 'lucide-react';
 import { useState } from 'react';
 
+interface PropertyListingProps {
+  onViewAll: () => void;
+}
+
 const properties = [
   {
     id: 1,
@@ -80,11 +84,11 @@ const propertyTypes = [
   { icon: Building, label: 'Sala comercial', count: '186.061' }
 ];
 
-export function PropertyListing() {
+export function PropertyListing({ onViewAll }: PropertyListingProps) {
   const [favorites, setFavorites] = useState<number[]>([]);
 
   const toggleFavorite = (id: number) => {
-    setFavorites(prev =>
+    setFavorites(prev => 
       prev.includes(id) ? prev.filter(fav => fav !== id) : [...prev, id]
     );
   };
@@ -96,7 +100,7 @@ export function PropertyListing() {
         <div className="mb-6">
           <p className="text-sm text-gray-600 mb-2">Imóveis • Em todo Brasil</p>
           <h2 className="text-gray-900 mb-4">4.660.359 Imóveis em todo Brasil</h2>
-
+          
           {/* Property Type Tabs */}
           <div className="flex gap-4 overflow-x-auto pb-4 border-b border-gray-200">
             {propertyTypes.map((type, index) => {
@@ -104,6 +108,7 @@ export function PropertyListing() {
               return (
                 <button
                   key={index}
+                  onClick={onViewAll}
                   className="flex flex-col items-center gap-2 px-4 py-2 hover:bg-white rounded transition-colors whitespace-nowrap"
                 >
                   <Icon size={24} className="text-gray-600" />
@@ -266,7 +271,7 @@ export function PropertyListing() {
                     <div className="md:col-span-2 p-6">
                       <p className="text-sm text-gray-600 mb-2">{property.title}</p>
                       <h3 className="text-gray-900 mb-2">{property.location}</h3>
-
+                      
                       <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
                         <span className="flex items-center gap-1">
                           <MapPin size={16} />
