@@ -1,4 +1,4 @@
-import { Menu, X, Heart, User } from 'lucide-react';
+import { Menu, X, HeartIcon, User } from 'lucide-react';
 import { useState } from 'react';
 
 interface NavigationProps {
