@@ -33,13 +33,19 @@ export function SmartMap() {
                   <div className="bg-white rounded-[2.5rem] overflow-hidden">
                     {/* Phone notch */}
                     <div className="bg-gray-900 h-8 rounded-b-3xl mx-auto w-40"></div>
-                    
-                    {/* Map content - você pode substituir por uma imagem real */}
+
+                    {/* Map content */}
                     <div className="relative aspect-[9/16] bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
-                      <div className="text-gray-600 text-center p-8">
-                        <p>Imagem do Mapa Aqui</p>
-                        <p className="text-sm mt-2">(Substitua com sua imagem)</p>
-                      </div>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0481907033!2d-46.87549804999999!3d-23.6814346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full h-full"
+                      ></iframe>
                     </div>
                   </div>
                 </div>
