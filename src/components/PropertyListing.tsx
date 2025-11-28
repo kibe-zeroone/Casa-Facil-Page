@@ -94,7 +94,7 @@ export function PropertyListing({ onViewAll }: PropertyListingProps) {
   };
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-6">
@@ -125,7 +125,7 @@ export function PropertyListing({ onViewAll }: PropertyListingProps) {
         <div className="grid lg:grid-cols-4 gap-6">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg border border-gray-200 p-6 sticky top-24">
+            <div className="bg-white rounded-lg border border-blue-100 p-6 sticky top-24 shadow-md">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <SlidersHorizontal size={20} className="text-gray-600" />
@@ -236,7 +236,7 @@ export function PropertyListing({ onViewAll }: PropertyListingProps) {
           <div className="lg:col-span-3">
             <div className="flex justify-between items-center mb-6">
               <p className="text-sm text-gray-600">Mostrando {properties.length} resultados</p>
-              <select className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm">
+              <select className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm bg-white">
                 <option>Mais relevantes</option>
                 <option>Menor preço</option>
                 <option>Maior preço</option>
@@ -248,7 +248,7 @@ export function PropertyListing({ onViewAll }: PropertyListingProps) {
               {properties.map((property) => (
                 <div
                   key={property.id}
-                  className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
+                  className="bg-white rounded-lg border border-blue-100 overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="md:col-span-1 relative">
@@ -296,7 +296,7 @@ export function PropertyListing({ onViewAll }: PropertyListingProps) {
                           </span>
                         )}
                       </div>
-
+                      
                       <div className="flex items-end justify-between">
                         <div>
                           <div className="text-2xl text-gray-900 mb-1">

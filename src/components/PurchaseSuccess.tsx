@@ -8,9 +8,9 @@ interface PurchaseSuccessProps {
 
 export function PurchaseSuccess({ property, onBackToHome }: PurchaseSuccessProps) {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#f5f9ff] to-white flex items-center justify-center p-4">
       <div className="max-w-2xl w-full">
-        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">
+        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center border border-blue-100">
           {/* Success Icon */}
           <div className="mb-6">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -25,7 +25,7 @@ export function PurchaseSuccess({ property, onBackToHome }: PurchaseSuccessProps
           </div>
 
           {/* Property Card */}
-          <div className="bg-gray-50 rounded-lg p-6 mb-8 text-left">
+          <div className="bg-gray-50 rounded-lg p-6 mb-8 text-left border border-blue-100">
             <h3 className="text-gray-900 mb-4">Imóvel Selecionado</h3>
             <div className="flex gap-4">
               <img
@@ -98,7 +98,7 @@ export function PurchaseSuccess({ property, onBackToHome }: PurchaseSuccessProps
           </div>
 
           {/* Contact Info */}
-          <div className="bg-blue-50 rounded-lg p-6 mb-8">
+          <div className="bg-blue-50 rounded-lg p-6 mb-8 border border-blue-200">
             <h3 className="text-gray-900 mb-2">Precisa de Ajuda?</h3>
             <p className="text-sm text-gray-600 mb-4">
               Nossa equipe está pronta para atendê-lo
@@ -123,7 +123,7 @@ export function PurchaseSuccess({ property, onBackToHome }: PurchaseSuccessProps
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={onBackToHome}
-              className="flex-1 bg-[#1e3a5f] text-white py-3 rounded-lg hover:bg-[#152940] transition-colors"
+              className="flex-1 bg-[#1e3a5f] text-white py-3 rounded-lg hover:bg-[#152940] transition-colors shadow-md"
             >
               Voltar ao Início
             </button>

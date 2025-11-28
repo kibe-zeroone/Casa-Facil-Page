@@ -1,6 +1,6 @@
 export function SmartMap() {
   return (
-    <section id="mapa" className="py-20 bg-white border-t border-gray-200">
+    <section id="mapa" className="py-20 bg-gradient-to-b from-white to-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-gray-900">
@@ -33,9 +33,9 @@ export function SmartMap() {
                   <div className="bg-white rounded-[2.5rem] overflow-hidden">
                     {/* Phone notch */}
                     <div className="bg-gray-900 h-8 rounded-b-3xl mx-auto w-40"></div>
-
+                    
                     {/* Map content */}
-                    <div className="relative aspect-[9/16] bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
+                    <div className="relative aspect-[9/19] bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
                       <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467692.0481907033!2d-46.87549804999999!3d-23.6814346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce448183a461d1%3A0x9ba94b08ff335bae!2zU8OjbyBQYXVsbywgU1A!5e0!3m2!1spt-BR!2sbr!4v1234567890"
                         width="100%"

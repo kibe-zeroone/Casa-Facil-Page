@@ -87,7 +87,7 @@ export function Features() {
             return (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg border border-gray-200 hover:border-[#1e3a5f] hover:shadow-lg transition-all duration-300 group"
+                className="bg-white p-6 rounded-lg border border-blue-100 hover:border-[#1e3a5f] hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#1e3a5f] transition-colors">
                   <Icon className="text-[#1e3a5f] group-hover:text-white transition-colors" size={24} />
@@ -110,7 +110,7 @@ export function Features() {
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {properties.map((property, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-white rounded-lg overflow-hidden border border-blue-100 hover:shadow-lg transition-shadow">
                 <div className="h-64 overflow-hidden">
                   <img
                     src={property.image}

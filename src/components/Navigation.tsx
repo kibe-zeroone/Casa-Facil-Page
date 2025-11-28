@@ -3,16 +3,17 @@ import { useState } from 'react';
 
 interface NavigationProps {
   onLoginClick: () => void;
+  onAboutClick: () => void;
 }
 
-export function Navigation({ onLoginClick }: NavigationProps) {
+export function Navigation({ onLoginClick, onAboutClick }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#eaf3ff] !bg-[#eaf3ff] bg-opacity-100 border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <nav className="bg-[#e3f2fd] border-b border-blue-200 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
+          
           {/* LOGO */}
           <div className="flex items-center">
             <div className="flex items-center gap-2">
@@ -29,21 +30,24 @@ export function Navigation({ onLoginClick }: NavigationProps) {
             <a href="#inicio" className="text-gray-700 hover:text-[#1e3a5f] transition-colors border-b-2 border-transparent hover:border-[#1e3a5f] pb-1">
               Imóveis
             </a>
-            <a href="#sobre" className="text-gray-700 hover:text-[#1e3a5f] transition-colors">
+            <button 
+              onClick={onAboutClick}
+              className="text-gray-700 hover:text-[#1e3a5f] transition-colors"
+            >
               Sobre
-            </a>
+            </button>
             <a href="#contato" className="text-gray-700 hover:text-[#1e3a5f] transition-colors">
               Anuncie
             </a>
-
+            
             <button className="flex items-center gap-2 text-gray-700 hover:text-[#1e3a5f] transition-colors">
               <HeartIcon size={20} />
               Favoritos
             </button>
-
+            
             <button
               onClick={onLoginClick}
-              className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded hover:border-[#1e3a5f] transition-colors"
+              className="flex items-center gap-2 border border-[#1e3a5f] bg-white px-4 py-2 rounded hover:bg-[#1e3a5f] hover:text-white transition-colors"
             >
               <User size={20} />
               Entrar
@@ -67,21 +71,24 @@ export function Navigation({ onLoginClick }: NavigationProps) {
             <a href="#inicio" className="block text-gray-700 hover:text-[#1e3a5f] py-2">
               Imóveis
             </a>
-            <a href="#sobre" className="block text-gray-700 hover:text-[#1e3a5f] py-2">
+            <button 
+              onClick={onAboutClick}
+              className="block text-gray-700 hover:text-[#1e3a5f] py-2 w-full text-left"
+            >
               Sobre
-            </a>
+            </button>
             <a href="#contato" className="block text-gray-700 hover:text-[#1e3a5f] py-2">
               Anuncie
             </a>
-
+            
             <button className="flex items-center gap-2 text-gray-700 hover:text-[#1e3a5f] py-2">
               <HeartIcon size={20} />
               Favoritos
             </button>
-
+            
             <button
               onClick={onLoginClick}
-              className="w-full flex items-center justify-center gap-2 border border-gray-300 px-4 py-2 rounded"
+              className="w-full flex items-center justify-center gap-2 border border-[#1e3a5f] bg-white px-4 py-2 rounded"
             >
               <User size={20} />
               Entrar

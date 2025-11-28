@@ -14,11 +14,11 @@ export function CTA() {
           Comece sua jornada com a CasaFácil. Mais de 10.000 imóveis disponíveis e milhares de pessoas já encontraram o lar perfeito.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white text-[#1e3a5f] px-8 py-4 rounded hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+          <button className="bg-white text-[#1e3a5f] px-8 py-4 rounded hover:bg-gray-100 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
             Começar Agora
             <ArrowRight size={20} />
           </button>
-          <button className="border-2 border-white text-white px-8 py-4 rounded hover:bg-white hover:text-[#1e3a5f] transition-colors">
+          <button className="border-2 border-white text-white px-8 py-4 rounded hover:bg-white hover:text-[#1e3a5f] transition-colors shadow-lg hover:shadow-xl">
             Anunciar Imóvel
           </button>
         </div>

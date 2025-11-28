@@ -2,7 +2,7 @@ import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 text-gray-600 py-12">
+    <footer className="bg-gray-50 border-t border-gray-200 text-gray-600 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>

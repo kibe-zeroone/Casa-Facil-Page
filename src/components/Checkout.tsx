@@ -11,14 +11,11 @@ interface CheckoutProps {
 export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    // Personal Info
     fullName: '',
     email: '',
     phone: '',
     cpf: '',
     birthDate: '',
-    
-    // Address
     cep: '',
     street: '',
     number: '',
@@ -26,12 +23,8 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
     neighborhood: '',
     city: '',
     state: '',
-    
-    // Financing
     downPayment: '',
     financingMonths: '240',
-    
-    // Payment
     paymentMethod: 'financing',
     cardNumber: '',
     cardName: '',
@@ -51,7 +44,6 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
     if (step < 4) {
       setStep(step + 1);
     } else {
-      // Simulate purchase completion
       setTimeout(() => {
         onComplete();
       }, 1500);
@@ -62,18 +54,18 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
     const downPayment = parseFloat(formData.downPayment.replace(/\D/g, '')) || 0;
     const financedAmount = property.price - downPayment;
     const months = parseInt(formData.financingMonths);
-    const interestRate = 0.008; // 0.8% ao mês (exemplo)
+    const interestRate = 0.008;
     
-    const monthlyPayment = financedAmount * (interestRate * Math.pow(1 + interestRate, months)) / 
-                          (Math.pow(1 + interestRate, months) - 1);
+    const monthlyPayment = financedAmount * (interestRate * Math.pow(1 + interestRate, months)) /
+                           (Math.pow(1 + interestRate, months) - 1);
     
     return monthlyPayment;
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#f5f9ff] to-white">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div className="bg-white border-b border-blue-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <button
             onClick={onBack}
@@ -115,7 +107,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Form */}
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-sm">
+            <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-md border border-blue-100">
               {/* Step 1: Personal Information */}
               {step === 1 && (
                 <div className="space-y-6">
@@ -125,7 +117,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                       Dados Pessoais
                     </h2>
                   </div>
-
+                  
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="md:col-span-2">
                       <label className="block text-gray-700 mb-2">Nome Completo *</label>
@@ -139,7 +131,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">E-mail *</label>
                       <input
@@ -152,7 +144,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Telefone *</label>
                       <input
@@ -165,7 +157,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">CPF *</label>
                       <input
@@ -178,7 +170,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Data de Nascimento *</label>
                       <input
@@ -203,7 +195,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                       Endereço Residencial
                     </h2>
                   </div>
-
+                  
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-700 mb-2">CEP *</label>
@@ -217,9 +209,9 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div></div>
-
+                    
                     <div className="md:col-span-2">
                       <label className="block text-gray-700 mb-2">Rua *</label>
                       <input
@@ -232,7 +224,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Número *</label>
                       <input
@@ -245,7 +237,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Complemento</label>
                       <input
@@ -257,7 +249,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         placeholder="Apto, Bloco, etc."
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Bairro *</label>
                       <input
@@ -270,7 +262,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Cidade *</label>
                       <input
@@ -283,7 +275,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         required
                       />
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Estado *</label>
                       <select
@@ -316,7 +308,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                       Opções de Financiamento
                     </h2>
                   </div>
-
+                  
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                     <div className="flex items-center gap-2 text-[#1e3a5f] mb-2">
                       <Shield size={20} />
@@ -326,7 +318,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                       Você está pré-aprovado para financiar até 80% do valor do imóvel
                     </p>
                   </div>
-
+                  
                   <div className="space-y-4">
                     <div>
                       <label className="block text-gray-700 mb-2">Valor de Entrada *</label>
@@ -343,7 +335,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         Mínimo: R$ {(property.price * 0.2).toLocaleString('pt-BR')} (20%)
                       </p>
                     </div>
-
+                    
                     <div>
                       <label className="block text-gray-700 mb-2">Prazo de Financiamento *</label>
                       <select
@@ -360,7 +352,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         <option value="360">360 meses (30 anos)</option>
                       </select>
                     </div>
-
+                    
                     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                       <h3 className="text-gray-900 mb-4">Resumo do Financiamento</h3>
                       <div className="space-y-3">
@@ -408,7 +400,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                       Confirmação dos Dados
                     </h2>
                   </div>
-
+                  
                   <div className="space-y-6">
                     {/* Property Summary */}
                     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
@@ -428,7 +420,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         </div>
                       </div>
                     </div>
-
+                    
                     {/* Personal Info Summary */}
                     <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                       <h3 className="text-gray-900 mb-4">Dados Pessoais</h3>
@@ -451,7 +443,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         </div>
                       </div>
                     </div>
-
+                    
                     {/* Financing Summary */}
                     <div className="bg-blue-50 rounded-lg p-6 border border-blue-200">
                       <h3 className="text-gray-900 mb-4">Financiamento</h3>
@@ -474,7 +466,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                         </div>
                       </div>
                     </div>
-
+                    
                     {/* Terms */}
                     <div className="border border-gray-200 rounded-lg p-4">
                       <label className="flex items-start gap-3 cursor-pointer">
@@ -502,7 +494,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                 )}
                 <button
                   type="submit"
-                  className="flex-1 bg-[#1e3a5f] text-white py-3 rounded-lg hover:bg-[#152940] transition-colors"
+                  className="flex-1 bg-[#1e3a5f] text-white py-3 rounded-lg hover:bg-[#152940] transition-colors shadow-md"
                 >
                   {step === 4 ? 'Finalizar Compra' : 'Continuar'}
                 </button>
@@ -512,7 +504,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
 
           {/* Summary Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg p-6 shadow-sm sticky top-24">
+            <div className="bg-white rounded-lg p-6 shadow-md sticky top-24 border border-blue-100">
               <h3 className="text-gray-900 mb-4">Resumo</h3>
               
               <div className="space-y-4 mb-6">
@@ -537,7 +529,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                   </div>
                 </div>
               </div>
-
+              
               <div className="bg-blue-50 rounded-lg p-4 mb-4">
                 <div className="flex items-center gap-2 text-[#1e3a5f] mb-2">
                   <Shield size={18} />
@@ -547,7 +539,7 @@ export function Checkout({ property, onBack, onComplete }: CheckoutProps) {
                   Seus dados estão protegidos e a transação é 100% segura
                 </p>
               </div>
-
+              
               <div className="space-y-2 text-xs text-gray-600">
                 <div className="flex items-center gap-2">
                   <Check size={14} className="text-green-500" />

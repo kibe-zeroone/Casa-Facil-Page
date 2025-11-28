@@ -30,7 +30,7 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#f5f9ff] to-white p-4">
       {/* Back button */}
       <button
         onClick={onBackToSite}
@@ -41,10 +41,10 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
       </button>
 
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-3xl shadow-lg p-8">
+        <div className="bg-white rounded-3xl shadow-xl p-8 border border-blue-100">
           {/* Profile Image / Logo */}
           <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#152940] flex items-center justify-center">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#1e3a5f] to-[#152940] flex items-center justify-center shadow-lg">
               <Home className="w-12 h-12 text-white" />
             </div>
           </div>
@@ -71,7 +71,7 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
                 required
               />
             </div>
-
+            
             {/* Password Input */}
             <div>
               <label htmlFor="password" className="block text-gray-700 mb-2">
@@ -100,23 +100,23 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
                 </button>
               </div>
             </div>
-
+            
             {/* Forgot Password Link */}
             <div className="text-right">
               <a href="#" className="text-[#1e3a5f] hover:text-[#152940] transition">
                 Esqueceu a senha?
               </a>
             </div>
-
+            
             {/* Submit Button */}
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#1e3a5f] text-white py-3.5 rounded-lg hover:bg-[#152940] transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#1e3a5f] text-white py-3.5 rounded-lg hover:bg-[#152940] transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
             >
               {isLoading ? 'Entrando...' : 'Entrar'}
             </button>
-
+            
             {/* Create Account Button */}
             <button
               type="button"
@@ -141,7 +141,7 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
           <div className="flex justify-center gap-4">
             <button
               onClick={() => handleSocialLogin('Apple')}
-              className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center hover:bg-gray-800 transition"
+              className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center hover:bg-gray-800 transition shadow-md"
               aria-label="Login com Apple"
             >
               <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -150,7 +150,7 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
             </button>
             <button
               onClick={() => handleSocialLogin('Facebook')}
-              className="w-12 h-12 bg-[#1877f2] rounded-lg flex items-center justify-center hover:bg-[#1664d8] transition"
+              className="w-12 h-12 bg-[#1877f2] rounded-lg flex items-center justify-center hover:bg-[#1664d8] transition shadow-md"
               aria-label="Login com Facebook"
             >
               <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -159,7 +159,7 @@ export function LoginScreen({ onBackToSite }: LoginScreenProps) {
             </button>
             <button
               onClick={() => handleSocialLogin('X/Twitter')}
-              className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center hover:bg-gray-800 transition"
+              className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center hover:bg-gray-800 transition shadow-md"
               aria-label="Login com X"
             >
               <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">

@@ -12,9 +12,10 @@ import { SearchResults } from './components/SearchResults';
 import { PropertyDetails } from './components/PropertyDetails';
 import { Checkout } from './components/Checkout';
 import { PurchaseSuccess } from './components/PurchaseSuccess';
+import { About } from './components/About';
 import type { Property } from './components/SearchResults';
 
-type ViewState = 'home' | 'login' | 'search' | 'details' | 'checkout' | 'success';
+type ViewState = 'home' | 'login' | 'search' | 'details' | 'checkout' | 'success' | 'about';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('home');
@@ -29,6 +30,11 @@ export default function App() {
     setCurrentView('home');
     setSelectedProperty(null);
   };
+
+  // About Screen
+  if (currentView === 'about') {
+    return <About onBack={resetToHome} />;
+  }
 
   // Login Screen
   if (currentView === 'login') {
@@ -80,7 +86,10 @@ export default function App() {
   // Home Page
   return (
     <div className="min-h-screen bg-white">
-      <Navigation onLoginClick={() => setCurrentView('login')} />
+      <Navigation 
+        onLoginClick={() => setCurrentView('login')} 
+        onAboutClick={() => setCurrentView('about')}
+      />
       <Hero onSearch={() => setCurrentView('search')} />
       <PropertyListing onViewAll={() => setCurrentView('search')} />
       <SmartMap />

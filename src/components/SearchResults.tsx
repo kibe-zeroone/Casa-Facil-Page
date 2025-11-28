@@ -1,7 +1,7 @@
-import { SlidersHorizontal, MapPin, Home, Building, Bed, Bath, Car, Heart, ArrowLeft, ChevronDown } from 'lucide-react';
+import { ArrowLeft, MapPin, Home, Bed, Bath, Car, Heart } from 'lucide-react';
 import { useState } from 'react';
 
-interface Property {
+export interface Property {
   id: number;
   image: string;
   title: string;
@@ -198,9 +198,9 @@ export function SearchResults({ onBack, onSelectProperty }: SearchResultsProps) 
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#f5f9ff] to-white">
       {/* Header with Back Button */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div className="bg-white border-b border-blue-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <button
             onClick={onBack}
@@ -228,7 +228,7 @@ export function SearchResults({ onBack, onSelectProperty }: SearchResultsProps) 
                 <option>Apartamento</option>
                 <option>Terreno</option>
               </select>
-
+              
               <select
                 value={priceRange}
                 onChange={(e) => setPriceRange(e.target.value)}
@@ -239,7 +239,7 @@ export function SearchResults({ onBack, onSelectProperty }: SearchResultsProps) 
                 <option value="medium">R$ 500.000 - R$ 1.000.000</option>
                 <option value="high">Acima de R$ 1.000.000</option>
               </select>
-
+              
               <select
                 value={bedroomFilter || ''}
                 onChange={(e) => setBedroomFilter(e.target.value ? Number(e.target.value) : null)}
@@ -262,7 +262,7 @@ export function SearchResults({ onBack, onSelectProperty }: SearchResultsProps) 
           {filteredProperties.map((property) => (
             <div
               key={property.id}
-              className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer group"
+              className="bg-white rounded-lg border border-blue-100 overflow-hidden hover:shadow-lg transition-all cursor-pointer group"
               onClick={() => onSelectProperty(property)}
             >
               <div className="relative">
@@ -339,5 +339,3 @@ export function SearchResults({ onBack, onSelectProperty }: SearchResultsProps) 
     </div>
   );
 }
-
-export type { Property };
